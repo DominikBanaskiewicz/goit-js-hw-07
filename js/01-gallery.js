@@ -21,7 +21,8 @@ galleryItems.forEach((item) => {
   element.append(link);
   gallery.append(element);
 });
-console.log(gallery);
+
+//Click event listener
 
 gallery.addEventListener("click", (event) => {
   //finding big image url
