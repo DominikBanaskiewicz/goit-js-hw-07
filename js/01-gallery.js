@@ -27,6 +27,11 @@ galleryItems.forEach((item) => {
 gallery.addEventListener("click", (event) => {
   //finding big image url
   event.preventDefault();
+
+  if (event.target.classList.value !== "gallery__image") {
+    return;
+  }
+
   let findGalleryItemByPreview = galleryItems.find(
     (el) => el.preview === event.target.src
   );
@@ -39,11 +44,13 @@ gallery.addEventListener("click", (event) => {
   instance.show();
 
   // modal close from key Escape
-  document.addEventListener(
+  console.log(instance.visible());
+  const close = document.addEventListener(
     "keydown",
     (event) => {
       if (event.key === "Escape") {
         instance.close();
+        document.removeEventListener(Object, close);
       }
     },
     { once: true }
