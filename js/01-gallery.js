@@ -44,7 +44,7 @@ gallery.addEventListener("click", (event) => {
   instance.show();
 
   // modal close from key Escape
-  console.log(instance.visible());
+
   const close = document.addEventListener(
     "keydown",
     (event) => {
